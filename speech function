@@ -1,0 +1,27 @@
+
+import pyttsx3
+def 
+speak(text):
+    engine = pyttsx3 .init("sapi5")
+    voices = engine.getProperty("voices")
+    engine.setProperty("voices",voices[0].id)
+    engine.setProperty("rate",170)
+    print("")
+    print(f"you:{text}.")
+    print("")
+    engine.say(text)
+    engine.runAndWait()
+
+
+from selenium import webdriver
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import  By
+from time import sleep
+
+chrome_options  =Options()
+chrome_options.add_argument("--log-level=3")
+chrome_options.headless = False
+path ="database\chromedriver.exe"
+driver = webdriver.Chrome(path,chrome_options)
+driver.maximize_window()      
